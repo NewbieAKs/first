@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--有参构造注入-->
+   <!-- <bean id="textEditor" class="test1.TextEditor">
+        <constructor-arg ref="spellChecker"/>
+    </bean>-->
+
+    <!--set注入：如果你要把一个引用传递给一个对象，那么你需要使用 标签的 ref 属性，而如果你要直接传递一个值，那么你应该使用 value 属性。-->
+    <bean id="textEditor" class="test2.TextEditor">
+        <property name="spellChecker" ref="spellChecker"/>
+    </bean>
+    <bean id="spellChecker" class="test1.SpellChecker"></bean>
+</beans>
